@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class DepositCalculator {
 
-    double calculateComplexPercent (double amount, double yearRate, int depositPeriod) {
-       double pay = amount * Math.pow((1 + yearRate / 12), 12 * depositPeriod);
-          return exponentiation(pay, 2);
-  }
+    double calculateComplexPercent(double amount, double yearRate, int depositPeriod) {
+        double pay = amount * Math.pow((1 + yearRate / 12), 12 * depositPeriod);
+        return exponentiation(pay, 2);
+    }
 
-  double calculateSimplePercent (double amount, double yearRate, int depositPeriod) {
-      return exponentiation(amount + amount * yearRate * depositPeriod, 2);
+    double calculateSimplePercent(double amount, double yearRate, int depositPeriod) {
+        return exponentiation(amount + amount * yearRate * depositPeriod, 2);
     }
 
     double exponentiation(double value, int degree) {
@@ -36,6 +36,7 @@ public class DepositCalculator {
         }
         System.out.println("Результат вклада: " + amount + " за " + period + " лет превратятся в " + income);
     }
+
     public static void main(String[] args) {
         new DepositCalculator().calculation();
     }
