@@ -12,13 +12,14 @@ public class DepositCalculator {
     }
 
     double exponentiation(double value, int degree) {
-        double Scale = Math.pow(10, degree);
-        return Math.round(value * Scale) / Scale;
+        double scale = Math.pow(10, degree);
+        return Math.round(value * scale) / scale;
     }
 
     void calculation() {
         int period;
         int action;
+        final double YEAR_RATE = 0.06;
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите сумму вклада в рублях:");
@@ -30,9 +31,9 @@ public class DepositCalculator {
         double income = 0;
 
         if (action == 1) {
-            income = calculateSimplePercent(amount, 0.06, period);
+            income = calculateSimplePercent(amount, YEAR_RATE, period);
         } else if (action == 2) {
-            income = calculateComplexPercent(amount, 0.06, period);
+            income = calculateComplexPercent(amount, YEAR_RATE, period);
         }
         System.out.println("Результат вклада: " + amount + " за " + period + " лет превратятся в " + income);
     }
